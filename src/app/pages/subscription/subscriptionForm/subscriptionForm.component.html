@@ -1,0 +1,52 @@
+<section class="subscription-form-container">
+  <h2 class="form-title">Subscription Details</h2>
+
+  <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <!-- Personal Information -->
+      <ion-item>
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input
+          formControlName="fullName"
+          type="text"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input
+          formControlName="email"
+          type="email"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Child Information -->
+      <ion-item>
+        <ion-label position="floating">Child's Name</ion-label>
+        <ion-input
+          formControlName="childName"
+          type="text"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Child's Age</ion-label>
+        <ion-select formControlName="childAge">
+          <!-- <ion-select-option value="3-5">3-5 years</ion-select-option>
+          <ion-select-option value="6-8">6-8 years</ion-select-option>
+          <ion-select-option value="9-12">9-12 years</ion-select-option> -->
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button
+        expand="block"
+        type="submit"
+        [disabled]="!subscriptionForm.valid"
+      >
+        Continue to Payment
+      </ion-button>
+    </div>
+  </form>
+</section>
