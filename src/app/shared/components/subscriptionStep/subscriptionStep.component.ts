@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-subscription-step',
@@ -8,4 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './subscriptionStep.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubscriptionStepComponent { }
+export class SubscriptionStepComponent {
+@Input()step:any;
+
+}

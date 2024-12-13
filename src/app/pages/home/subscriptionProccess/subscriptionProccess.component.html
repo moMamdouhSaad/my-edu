@@ -1,2 +1,45 @@
-subscriptionProccess
-<app-subscription-step></app-subscription-step>
+<section class="subscription-process-container">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" class="ion-text-center">
+        <p class="small-discover-text">Discover</p>
+
+        <h2 class="main-title">
+          How It Works: Subscribe and Receive Your Surprise Box
+        </h2>
+
+        <p class="description">
+          Subscribe to our surprise subscription box and give your child
+          the gift of learning. Each month, we curate a box filled with
+          educational materials tailored to your child's age and interests.
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-top">
+      <ion-col
+        *ngFor="let step of subscriptionSteps"
+        size="12"
+        size-md="4"
+        class="ion-margin-bottom"
+      >
+        <app-subscription-step
+          [step]="step"
+        ></app-subscription-step>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size="12" size-md="6" class="ion-text-center">
+        <ion-button
+          expand="block"
+          color="primary"
+          size="large"
+
+          class="subscribe-button"
+        >
+          Subscribe Now
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>

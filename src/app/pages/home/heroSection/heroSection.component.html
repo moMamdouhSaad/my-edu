@@ -1,1 +1,40 @@
-hero component
+<section class="surprise-hero-container">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <h1 class="hero-main-title">
+          Discover the Magic of Our Surprise Box
+        </h1>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center">
+        <p class="hero-description">
+          Unlock a world of excitement with our carefully curated surprise boxes.
+          Each box is a journey of discovery, tailored just for you.
+        </p>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center ion-margin-top">
+        <ion-button
+          color="primary"
+          size="large"
+          class="subscribe-button"
+        >
+          Subscribe Now
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center ion-margin-top">
+        <img
+          src="assets/images/surprise-box-hero.png"
+          alt="Magical Surprise Box"
+          class="hero-image"
+          [ngClass]="{
+            'mobile-image': responsiveService.isMobile(),
+            'desktop-image': !responsiveService.isMobile()
+          }"
+        />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</section>
