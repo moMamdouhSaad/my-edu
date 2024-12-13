@@ -31,7 +31,12 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss"],
+            "stylePreprocessorOptions": {
+        "includePaths": [
+          "src/theme"
+        ]
+      },
             "scripts": []
           },
           "configurations": {
@@ -106,7 +111,12 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss"],
+            "stylePreprocessorOptions": {
+        "includePaths": [
+          "src/theme"
+        ]
+      },
             "scripts": []
           },
           "configurations": {

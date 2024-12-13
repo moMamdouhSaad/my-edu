@@ -1,0 +1,17 @@
+@import 'colors';
+@import 'typography';
+
+// Global styles
+body {
+  background-color: red !important;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+// Component-specific styles
+// ion-button {
+//   --background: $primary;
+//   --color: $light;
+// }
+
