@@ -1,0 +1,31 @@
+#subscription-container{
+  border: 2px red dashed;
+  background-image: url('/assets/images/subscription-bg-desktop.svg') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust height as needed */
+  display: flex !important;
+  align-items: center !important;
+  ion-content{
+
+    --background: none;
+
+  }
+  ion-row{
+    width: 100% !important;
+
+  }
+}
+.responsive-bordered-container {
+
+  border: 1px solid blue; /* Border color */
+  border-radius: 16px; /* Rounded corners */
+  overflow: hidden; /* Ensures rounded corners appear cleanly */
+  display: flex; /* Flex layout for responsiveness */
+  flex-direction: column; /* Stack by default (mobile) */
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* Side-by-side layout for tablets/desktops */
+    align-items: stretch; /* Ensure both components fill the height */
+  }
+}

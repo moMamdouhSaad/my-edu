@@ -1,6 +1,6 @@
 
 $primary: #896AF9;
-$secondary: #0cd1e8;
+$secondary: #F1EDFE;
 $tertiary: #f038ff;
 $success: #4caf50;
 $warning: #ff9800;
@@ -12,7 +12,11 @@ $off-yellow: #FFF9E6;
 
 :root {
   --ion-color-primary: #896AF9;
+  --ion-color-secondary: #F1EDFE;
+
   --ion-color-primary-contrast: #ffffff;
-  --color-off-yellow:#FFF9E6
+  --color-off-yellow:#FFF9E6;
+  --ion-white: #ffffff;
+  --ion-item-background: transparent
 
 }

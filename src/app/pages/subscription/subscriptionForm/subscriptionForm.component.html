@@ -1,52 +1,86 @@
 <section class="subscription-form-container">
-  <h2 class="form-title">Subscription Details</h2>
+
+  <!-- Header -->
+  <div class="flex-column" style="margin-bottom:10px">
+    <!-- TODO -->
+
+    <span class="text-24 font-weight-700">Subscription Details</span>
+    <span class="text-16 font-weight-14" style="margin-bottom: 10px;">to our Monthly Surprise Box</span>
+<!-- TODO -->
+    <!-- sperator -->
+    <svg width="548" height="1" viewBox="0 0 548 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="548" height="1" fill="#F2F2F2" />
+    </svg>
+    <!--  -->
+
+  </div>
+
+  <!--  -->
+
 
   <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
-    <ion-list>
-      <!-- Personal Information -->
-      <ion-item>
-        <ion-label position="floating">Full Name</ion-label>
-        <ion-input
-          formControlName="fullName"
-          type="text"
-        ></ion-input>
+    <ion-list lines="none" class="ion-no-padding">
+      <!-- Contact Information -->
+
+
+      <!--  -->
+      <span class="text-20 font-weight-700">Contact Information</span>
+      <!--  -->
+
+
+      <ion-item >
+        <div class="flex-column w-100">
+          <ion-label class="text-14 font-weight-500">Your name</ion-label>
+          <ion-input formControlName="fullName" fill="outline" placeholder="Enter text"></ion-input>
+        </div>
       </ion-item>
 
+
       <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input
-          formControlName="email"
-          type="email"
-        ></ion-input>
+        <div class="flex-column w-100">
+        <ion-label class="text-14 font-weight-500">Email</ion-label>
+        <ion-input formControlName="email" type="email" fill="outline" placeholder="Enter text"></ion-input>
+        </div>
       </ion-item>
 
       <!-- Child Information -->
+      <span class="text-20 font-weight-700">Child’s Information</span>
+
       <ion-item>
-        <ion-label position="floating">Child's Name</ion-label>
-        <ion-input
-          formControlName="childName"
-          type="text"
-        ></ion-input>
+        <div class="flex-column w-100">
+          <ion-label class="text-14 font-weight-500">Child’s Full Name</ion-label>
+          <ion-input formControlName="childName" type="text" fill="outline" placeholder="Enter text"></ion-input>
+        </div>
       </ion-item>
 
       <ion-item>
-        <ion-label>Child's Age</ion-label>
-        <ion-select formControlName="childAge">
-          <!-- <ion-select-option value="3-5">3-5 years</ion-select-option>
-          <ion-select-option value="6-8">6-8 years</ion-select-option>
-          <ion-select-option value="9-12">9-12 years</ion-select-option> -->
-        </ion-select>
+        <div class="flex-column w-100">
+
+        <ion-label class="text-14 font-weight-500">Child’s Date of Birth</ion-label>
+        <ion-input formControlName="childAge" type="text" fill="outline" placeholder="Enter text"></ion-input>
+</div>
+      </ion-item>
+
+      <ion-item>
+        <div class="flex-column w-100">
+
+        <ion-label class="text-14 font-weight-500">Grade</ion-label>
+        <ion-input formControlName="childGrade" type="text" fill="outline" placeholder="Enter text"></ion-input>
+</div>
       </ion-item>
     </ion-list>
 
-    <div class="ion-padding">
-      <ion-button
-        expand="block"
-        type="submit"
-        [disabled]="!subscriptionForm.valid"
-      >
-        Continue to Payment
-      </ion-button>
+    <div class="ion-padding w-100">
+
+      <app-rounded-button
+      [size]="'default'" [additionalClass]="'font-bold-900'"
+      [fontWeight]="900"
+      [expand]="'full'"
+      style="--custom-border-radius: 16px;
+               ">
+       Continue to Payment
+     </app-rounded-button>
+
     </div>
   </form>
 </section>
