@@ -1,0 +1,23 @@
+$mobile-width: 768px;
+$tablet-width: 1024px;
+$large-width: 1200px;  // New large screen breakpoint
+
+// Horizontal padding classes
+.main-padding-horizontal {
+  padding-left: 10px; // Default (mobile)
+  padding-right: 10px;
+
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+    padding-left: 20px; // Tablet
+    padding-right: 20px;
+  }
+
+  @media (min-width: #{$tablet-width}) {
+    padding-left: 40px; // Desktop
+    padding-right: 40px;
+  }
+  @media (min-width: #{$large-width}) {
+    padding-left: 120px; // Large screens (1200px and above)
+    padding-right: 120px;
+  }
+}

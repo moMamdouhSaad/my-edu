@@ -1,0 +1,5 @@
+/* Size Function */
+@function size($pixels) {
+  @return #{$pixels}px;
+}
+/* END */

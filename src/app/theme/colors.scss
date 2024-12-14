@@ -1,22 +1,6 @@
-
-$primary: #ff0000;
-$secondary: #0cd1e8;
-$tertiary: #f038ff;
-$success: #4caf50;
-$warning: #ff9800;
-$danger: #f44336;
-$light: #f4f4f4;
-$dark: #222;
+@import 'variables';
 
 
-:root {
-  --ion-color-primary: #896AF9;
-  --ion-color-primary-rgb: 0, 102, 0;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #005a00;
-  --ion-color-primary-tint: #1a751a;
-
-
-  // --ion-background-color:rgb(255, 255, 255);
+.contrast-color{
+  color:var(--ion-color-primary-contrast)
 }

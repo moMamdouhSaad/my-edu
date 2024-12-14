@@ -40,6 +40,12 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import '@ionic/angular/css/palettes/dark.system.css';
 @import '/src/app/theme/theme.scss';
+@import '/src/app/theme/typography.scss';
+@import '/src/app/theme/colors.scss';
+@import '/src/app/theme/general.scss';
+
+
+
 
 
 :root {
@@ -48,8 +54,21 @@
 
 body {
   font-family: 'Nunito', sans-serif;
+  padding: 0 !important;
+  margin: 0 !important;;
 }
 
-.font-bold-900{
-  font-weight: 900 !important;
+
+
+.main-padding {
+  padding: 10px; // Default (mobile)
+
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+    padding: 20px; // Tablet
+  }
+
+  @media (min-width: #{$tablet-width}) {
+    padding: 40px; // Desktop
+  }
 }
+

@@ -1,5 +1,36 @@
-$font-family-base: sans-serif;
+$font-family-base: Nunito;
 $font-size-base: 16px;
 $line-height-base: 1.5;
 $font-weight-bold: bold;
 $font-weight-light: 300;
+
+
+@import 'functions';
+@import 'variables';
+
+
+
+// Text sizes
+.text-56 {
+  font-size: size(56);
+}
+.text-24 {
+  font-size: size(24);
+
+}
+
+
+// Font weights
+
+.font-weight-900{
+  font-weight: 900;
+}
+
+.font-weight-700{
+  font-weight: 700;
+}
+
+// Text shadows
+.text-shadow-primary-2{
+  text-shadow: 2px 2px 0px var(--ion-color-primary);
+}
