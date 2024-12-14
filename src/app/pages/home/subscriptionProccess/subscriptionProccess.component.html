@@ -1,45 +1,39 @@
-<section class="subscription-process-container">
+<section class="subscription-process-container main-padding-horizontal ion-align-items-center">
+
   <ion-grid>
     <ion-row class="ion-justify-content-center">
-      <ion-col size="12" class="ion-text-center">
-        <p class="small-discover-text">Discover</p>
+      <ion-col size="12" class="ion-text-center flex-column">
+        <span class="text-16 font-weight-600">Discover</span>
 
-        <h2 class="main-title">
+        <span class="text-48 font-weight-700">
           How It Works: Subscribe and Receive Your Surprise Box
-        </h2>
+        </span>
 
-        <p class="description">
+        <span class="text-24 font-weight-400">
           Subscribe to our surprise subscription box and give your child
           the gift of learning. Each month, we curate a box filled with
           educational materials tailored to your child's age and interests.
-        </p>
+        </span>
       </ion-col>
     </ion-row>
 
-    <ion-row class="ion-margin-top">
-      <ion-col
-        *ngFor="let step of subscriptionSteps"
-        size="12"
-        size-md="4"
-        class="ion-margin-bottom"
-      >
-        <app-subscription-step
-          [step]="step"
-        ></app-subscription-step>
-      </ion-col>
+    <ion-row class="ion-margin-top ion-justify-content-around">
+
+        <ion-col *ngFor="let step of subscriptionSteps" size="12" size-md="4">
+          <app-subscription-step [step]="step"></app-subscription-step>
+        </ion-col>
     </ion-row>
 
     <ion-row class="ion-justify-content-center ion-margin-top">
       <ion-col size="12" size-md="6" class="ion-text-center">
-        <ion-button
-          expand="block"
-          color="primary"
-          size="large"
+        <app-rounded-button
+         [size]="'default'" [additionalClass]="'font-bold-900'"
+         [fontWeight]="900"
+        style="--custom-border-radius: 24px;
 
-          class="subscribe-button"
-        >
+                  ">
           Subscribe Now
-        </ion-button>
+        </app-rounded-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -14,12 +14,22 @@ $font-weight-light: 300;
 .text-56 {
   font-size: size(56);
 }
-.text-24 {
-  font-size: size(24);
 
+.text-16{
+  font-size: size(16);
 }
 
+.text-24 {
+  font-size: size(24);
+}
 
+.text-32 {
+  font-size: size(32);
+}
+
+.text-48 {
+  font-size: size(48);
+}
 // Font weights
 
 .font-weight-900{
@@ -29,6 +39,16 @@ $font-weight-light: 300;
 .font-weight-700{
   font-weight: 700;
 }
+
+.font-weight-600{
+  font-weight: 600;
+}
+
+.font-weight-400{
+  font-weight: 400;
+}
+
+
 
 // Text shadows
 .text-shadow-primary-2{

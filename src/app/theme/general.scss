@@ -21,3 +21,8 @@ $large-width: 1200px;  // New large screen breakpoint
     padding-right: 120px;
   }
 }
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}

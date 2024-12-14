@@ -1,3 +1,11 @@
-:host {
-  display: block;
+
+.subscription-process-container{
+  background-image: url('/assets/images/sub-background-desktop.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust height as needed */
+  display: flex !important;
+  align-items: center !important;
+  background-color:var(--color-off-yellow) ;
+
 }

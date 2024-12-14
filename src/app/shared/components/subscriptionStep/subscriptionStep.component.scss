@@ -1,3 +1,16 @@
 :host {
   display: block;
+  text-align: center;
+  #subscription-step-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #step-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

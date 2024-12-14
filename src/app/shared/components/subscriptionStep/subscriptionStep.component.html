@@ -1,1 +1,10 @@
-subscription step
+<div id="subscription-step-card">
+  <img [src]="step.imgSrc"/>
+  <span class="step-number text-24 font-weight-700">
+    {{step.stepNO}}
+  </span>
+  <div id="step-content">
+    <span class="step-title text-32 font-weight-700">{{ step.title }}</span>
+    <span class="step-description text-16 font-weight-400">{{ step.description }}</span>
+  </div>
+</div>
