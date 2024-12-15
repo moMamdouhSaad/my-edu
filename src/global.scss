@@ -77,50 +77,8 @@ ion-input, ion-select {
   min-height: 44px !important;
   border-radius: 8px !important;
   --border-radius:8px !important;
-  // padding:50px 19px;
-
-  // -webkit-padding-start: 50px;
-  //   padding-inline-start: 50px;
-  //   -webkit-padding-end:50px;
-  //   padding-inline-end: 50px;
-  //   padding-top:50px;
-  //   padding-bottom: 50px;
-  //   border-radius: 50px;
-    .input-wrapper{
-
-    }
-
-    // -webkit-padding-start: var(--padding-start);
-    // padding-inline-start: var(--padding-start);
-    // -webkit-padding-end: var(--padding-end);
-    // padding-inline-end: var(--padding-end);
-    // padding-top: var(--padding-top);
-    // padding-bottom: var(--padding-bottom);
-    // border-radius: var(--border-radius);
-
-
 
 }
-
-ion-select {
-
-
-  // Ensure the clickable area is contained within the border
-  // --padding-start: 10px !important;
-  // --padding-end: 10px !important;
-
-  // Position the arrow to the right
-  // --indicator-color: yellow;
-  // --indicator-icon-margin: auto 0 auto auto !important;
-  // --indicator-icon-width: 24px;
-}
-// Optional: Adjust the dropdown on desktop
-// @media (min-width: 768px) {
-//   ion-select.select-interface-popover {
-//     --width: auto;
-//     // --max-width: 300px; // Adjust as needed
-//   }
-// }
 
 
 ion-item {

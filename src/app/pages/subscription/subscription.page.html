@@ -1,7 +1,10 @@
 
 
-<section id="subscription-container" style="padding-top: 40px;">
-
+<section id="subscription-container">
+  <div *ngIf="isMobile" class="mobile-class">This is a mobile view</div>
+  <div *ngIf="isTablet" class="tablet-class">This is a tablet view</div>
+  <div *ngIf="isDesktop" class="desktop-class">This is a desktop view</div>
+  <div *ngIf="isLargeScreen" class="large-screen-class">This is a large screen view</div>
   <ion-content>
     <ion-grid class="main-padding-horizontal ion-no-padding" >
       <div class="responsive-bordered-container">

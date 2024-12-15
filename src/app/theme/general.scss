@@ -67,8 +67,6 @@ ion-item {
 
 .custom-radio[aria-checked="true"]::after {
   content:url('/assets/icons/checked-icon.svg'); /* Path to your custom checked icon */
-  --color-checked: green !important;
-
 }
 
 .custom-radio{
