@@ -52,7 +52,6 @@ The application is organized into the following folders:
 
 To run the project locally, follow these steps:
 
-1. Clone the repository:
    ```bash
    git clone https://github.com/moMamdouhSaad/my-edu/git
    npm install
