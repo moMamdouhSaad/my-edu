@@ -56,7 +56,9 @@ To run the project locally, follow these steps:
    ```bash
    git clone https://github.com/moMamdouhSaad/my-edu/git
    npm install
-  ionic serve
+   ionic serve
+
+
 
 
 
