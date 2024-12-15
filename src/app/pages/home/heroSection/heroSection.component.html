@@ -50,7 +50,8 @@
           alt="Magical Surprise Box"
           class="hero-image"
           [ngClass]="{
-            'hero-image-mobile': isTablet || isMobile,
+            'hero-image-mobile': isMobile,
+            'hero-image-tablet': isTablet,
             'hero-image-desktop': isDesktop || isLargeScreen,
           }"
         />
