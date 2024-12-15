@@ -1,10 +1,16 @@
 <div id="subscription-step-card">
-  <img [src]="step.imgSrc"/>
-  <span class="step-number text-24 font-weight-700">
-    {{step.stepNO}}
-  </span>
+  <img [src]="step.imgSrc" />
+  <div class="step-number text-24 font-weight-700">
+    <span>
+      {{step.stepNO}}
+    </span>
+    <span *ngIf="isMobile">{{ step.title }}</span>
+
+  </div>
+
   <div id="step-content">
-    <span class="step-title text-32 font-weight-700">{{ step.title }}</span>
+    <span class="step-title text-32 font-weight-700" *ngIf="!isMobile">{{ step.title }}</span>
     <span class="step-description text-16 font-weight-400">{{ step.description }}</span>
   </div>
+
 </div>

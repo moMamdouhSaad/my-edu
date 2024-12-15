@@ -1,15 +1,32 @@
-<section class="subscription-process-container main-padding-horizontal ion-align-items-center">
+<section class="subscription-process-container ion-align-items-center padding-bottom-50"
+
+
+[ngClass]="{
+  'padding-top-40 padding-horizontal-30': isMobile,
+  'padding-top-50 padding-horizontal-90': isTablet,
+  'padding-top-60 padding-horizontal-150': isDesktop,
+  'padding-top-90 padding-horizontal-230': isLargeScreen
+}">>
 
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" class="ion-text-center flex-column">
         <span class="text-16 font-weight-600">Discover</span>
 
-        <span class="text-48 font-weight-700">
+        <span class="font-weight-700"
+        [ngClass]="{
+          'text-40': isTablet || isMobile,
+          'text-48': isDesktop || isLargeScreen,
+        }"
+        >
           How It Works: Subscribe and Receive Your Surprise Box
         </span>
 
-        <span class="text-24 font-weight-400">
+        <span class=" font-weight-400"
+        [ngClass]="{
+          'text-20': isTablet || isMobile,
+          'text-24': isDesktop || isLargeScreen,
+        }">
           Subscribe to our surprise subscription box and give your child
           the gift of learning. Each month, we curate a box filled with
           educational materials tailored to your child's age and interests.
@@ -19,7 +36,7 @@
 
     <ion-row class="ion-margin-top ion-justify-content-around">
 
-        <ion-col *ngFor="let step of subscriptionSteps" size="12" size-md="4">
+        <ion-col *ngFor="let step of subscriptionSteps" size="12" size-md="4" class="ion-margin-bottom">
           <app-subscription-step [step]="step"></app-subscription-step>
         </ion-col>
     </ion-row>
@@ -27,11 +44,12 @@
     <ion-row class="ion-justify-content-center ion-margin-top">
       <ion-col size="12" size-md="6" class="ion-text-center">
         <app-rounded-button
+         [routerLink]="['/subscription']"
          [size]="'default'" [additionalClass]="'font-bold-900'"
          [fontWeight]="900"
-        style="--custom-border-radius: 24px;
+         style="--custom-border-radius: 16px;"
 
-                  ">
+         >
           Subscribe Now
         </app-rounded-button>
       </ion-col>

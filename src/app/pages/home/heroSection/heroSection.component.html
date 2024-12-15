@@ -1,25 +1,43 @@
-<section class="main-padding-horizontal">
+<section [ngClass]="{
+  'padding-top-20 padding-horizontal-30': isMobile,
+  'padding-top-50 padding-horizontal-90 ': isTablet,
+  'padding-top-60 padding-horizontal-150': isDesktop,
+  'padding-top-90 padding-horizontal-230 ': isLargeScreen
+}">
 
   <ion-grid>
 
     <ion-row class="ion-justify-content-center ion-align-items-center">
       <ion-col size="12" class="ion-text-center">
-        <span class="text-56 contrast-color font-weight-900 text-shadow-primary-2">
+        <span class="text-shadow-primary-2 contrast-color font-weight-900 "
+
+        [ngClass]="{
+          'text-40': isTablet || isMobile,
+          'text-56': isDesktop || isLargeScreen,
+        }"
+        >
           Discover the Magic of Our Surprise Box
         </span>
       </ion-col>
 
       <ion-col size="12" class="ion-text-center">
-        <span class="text-24 contrast-color font-weight-700">
+        <span class="contrast-color font-weight-700"
+
+        [ngClass]="{
+          'text-20': isTablet || isMobile,
+          'text-24': isDesktop || isLargeScreen,
+        }"
+        >
           Unleash your child's curiosity with our educational subscription box filled with fun and learning.
         </span>
       </ion-col>
 
       <ion-col size="12" class="ion-text-center ion-margin-top">
         <app-rounded-button
+        [routerLink]="['/subscription']"
          [size]="'default'" [additionalClass]="'font-bold-900'"
          [fontWeight]="900"
-        style="--custom-border-radius: 24px;
+        style="--custom-border-radius: 14px;
 
                   ">
           Subscribe Now
@@ -32,8 +50,8 @@
           alt="Magical Surprise Box"
           class="hero-image"
           [ngClass]="{
-            'mobile-image':'',
-            'desktop-image': ''
+            'hero-image-mobile': isTablet || isMobile,
+            'hero-image-desktop': isDesktop || isLargeScreen,
           }"
         />
       </ion-col>

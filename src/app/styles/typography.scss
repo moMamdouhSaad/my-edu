@@ -39,13 +39,17 @@ $font-weight-light: 300;
   font-size: size(32);
 }
 
+.text-40 {
+  font-size: size(40);
+}
+
 .text-48 {
   font-size: size(48);
 }
 // Font weights
 
 .font-weight-900{
-  font-weight: 900;
+  font-weight: 900 !important;
 }
 
 .font-weight-700{

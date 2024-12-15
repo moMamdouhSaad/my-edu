@@ -1,19 +1,26 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SubscriptionStepComponent } from 'src/app/shared/components/subscriptionStep/subscriptionStep.component';
-import { IonButton, IonGrid, IonRow, IonCol } from "@ionic/angular/standalone";
-import { NgFor } from '@angular/common';
+import { IonGrid, IonRow, IonCol } from "@ionic/angular/standalone";
+import { NgClass, NgFor } from '@angular/common';
 import { ButtonComponent } from 'src/app/shared/components/button/button/rounded-button.component';
 import { StepModel } from 'src/app/shared/models/step.model';
+import { ResponsiveService } from 'src/app/core/services/responsive.service';
+import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-subscription-proccess',
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, SubscriptionStepComponent,NgFor,ButtonComponent],
+  imports: [IonCol, IonRow, IonGrid, SubscriptionStepComponent,NgFor,ButtonComponent,NgClass,RouterModule],
   templateUrl: './subscriptionProccess.component.html',
   styleUrl: './subscriptionProccess.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class SubscriptionProccessComponent {
+export class SubscriptionProccessComponent  extends ResponsiveBaseComponent {
+ constructor(public override readonly responsiveService:ResponsiveService){
+    super(responsiveService);
+  }
+
   subscriptionSteps: StepModel[] = [
     {
       stepNO:'Step 1 :',
