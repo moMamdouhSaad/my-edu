@@ -4,12 +4,12 @@ import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Va
 import { IonList, IonItem, IonLabel, IonInput,IonSelect,IonSelectOption, IonRow, IonCol, IonRadioGroup, IonRadio, IonCheckbox, IonIcon } from "@ionic/angular/standalone";
 import { ResponsiveService } from 'src/app/core/services/responsive.service';
 import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.component';
-import { ButtonComponent } from 'src/app/shared/components/button/button/rounded-button.component';
+import { RoundedButtonComponent } from 'src/app/shared/components/button/button/rounded-button.component';
 
 @Component({
   selector: 'app-subscription-form',
   standalone: true,
-  imports: [IonCheckbox, IonRadio, IonRadioGroup, IonCol, IonRow, IonInput, IonLabel, IonItem, IonList,ReactiveFormsModule,FormsModule,ButtonComponent,IonSelect,IonSelectOption,NgFor,NgIf,NgClass ],
+  imports: [IonCheckbox, IonRadio, IonRadioGroup, IonCol, IonRow, IonInput, IonLabel, IonItem, IonList,ReactiveFormsModule,FormsModule,RoundedButtonComponent,IonSelect,IonSelectOption,NgFor,NgIf,NgClass ],
   templateUrl: './subscriptionForm.component.html',
   styleUrl: './subscriptionForm.component.scss',
   changeDetection: ChangeDetectionStrategy.Default,
@@ -52,10 +52,8 @@ export class SubscriptionFormComponent extends ResponsiveBaseComponent {
   }
 
   onSubmit() {
-    console.log(this.subscriptionForm.value)
     if (this.subscriptionForm.valid) {
       console.log(this.subscriptionForm.value);
-      // Handle form submission logic
     }
   }
   private generateYearRange(): number[] {

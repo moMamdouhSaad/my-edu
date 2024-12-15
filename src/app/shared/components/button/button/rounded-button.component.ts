@@ -1,16 +1,15 @@
-import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IonButton } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-rounded-button',
   standalone: true,
-  imports: [IonButton, NgStyle],
+  imports: [IonButton],
   templateUrl: './rounded-button.component.html',
   styleUrl: './rounded-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {
+export class RoundedButtonComponent {
   @Input() color: string = 'primary'; // Default color
   @Input() size: string = 'default'; // Default size
   @Input() buttonType: string = 'button'; // Type of the button
