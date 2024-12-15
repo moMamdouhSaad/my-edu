@@ -1,0 +1,140 @@
+
+
+@import 'functions';
+
+
+// Custom radio button
+.custom-radio::part(container) {
+  display: none;
+}
+
+.custom-radio::after {
+  content: url('/assets/icons/unchecked-icon.svg');
+  display: inline-block;
+  width: size(24);
+  height: size(24);
+  margin-top: size(5);
+}
+
+.custom-radio[aria-checked="true"]::after {
+  content:url('/assets/icons/checked-icon.svg');
+}
+
+.custom-radio{
+  border: 1px var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3))  solid;
+  display: flex;
+  align-items: center;
+  min-height: size(44) !important;
+  border-radius: size(8) !important;
+  padding-inline-start: size(16) !important;
+}
+
+.radio-group{
+  display: flex;
+}
+// End of  Custom radio button
+
+
+
+// Custom checkbox
+.custom-checkbox::part(container) {
+  display: none;
+}
+
+.custom-checkbox::after {
+  content: '';
+  display: inline-block;
+  width: size(44);
+  height: size(44);
+  background-color: var(--color-white-1);
+  border-radius: 50%;
+  margin-top: size(5);
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox[aria-checked="true"]::after {
+  background-color: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: size(24);
+}
+
+.custom-checkbox {
+  border: size(1) solid var(--color-white-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  max-height: size(32) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  color:#667085
+}
+
+.custom-checkbox[aria-checked="true"] {
+  border-color: var(--ion-color-primary);
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 12px; /* Add spacing between checkboxes */
+  flex-wrap: wrap;
+}
+.custom-checkbox::part(container) {
+  display: none;
+}
+
+.custom-checkbox::after {
+  display: none;
+}
+
+.custom-checkbox[aria-checked="true"]::after {
+ display: none;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: size(48);
+  max-height: size(32) !important;
+  cursor: pointer;
+  padding-inline-start: size(16);
+  padding-block: size(4);
+  transition: all 0.3s ease;
+
+}
+
+.custom-checkbox[aria-checked="true"] {
+  border-color: var(--ion-color-primary);
+  background-color: var(--color-white-2);
+  color:var(--color-purple-1) !important
+}
+
+.checkbox-group {
+  display: flex;
+  gap: size(12);
+  flex-wrap: wrap;
+}
+
+// End of custom checkbox
+
+
+// Select Input
+ion-select::part(icon) {
+  content: url('/assets/icons/dropdown-select.svg');
+}
+
+ion-select[aria-expanded="true"]::part(icon) {
+  transform: rotate(180deg); // Flip the icon
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+// End of Select Input

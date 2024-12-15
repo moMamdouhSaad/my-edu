@@ -1,1 +1,23 @@
 
+@import 'functions';
+
+ion-item {
+  --padding-start: size(0);
+  --padding-end: size(0);
+  padding: size(0);
+  cursor: default;
+  --background-hover: transparent !important;
+}
+
+ion-input,
+ion-select {
+  color: var(--ion-color-dark) !important;
+  min-height: size(44) !important;
+  border-radius: size(8) !important;
+  --border-radius: size() !important;
+}
+
+ion-radio {
+  padding-inline-start: size(10) !important;
+
+}

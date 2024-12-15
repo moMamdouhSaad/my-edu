@@ -1,6 +1,9 @@
-@import 'variables';
 
+.primary-color{
+  color:var(--ion-color-primary)
+}
 
 .contrast-color{
   color:var(--ion-color-primary-contrast)
 }
+

@@ -45,12 +45,8 @@
 @import '/src/app/styles/general.scss';
 @import '/src/app/styles/margin-padding.scss';
 @import '/src/app/styles/functions.scss';
-
-
-
-
-
-
+@import '/src/app/styles/overriding.scss';
+@import '/src/app/styles/custom-inputs.scss';
 
 :root {
   --ion-font-family: 'Nunito', sans-serif; // For Ionic components
@@ -63,35 +59,5 @@ body {
 }
 
 
-
-.main-padding {
-  padding: 10px; // Default (mobile)
-
-  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
-    padding: 20px; // Tablet
-  }
-
-  @media (min-width: #{$tablet-width}) {
-    padding: 40px; // Desktop
-  }
-}
-
-ion-input, ion-select {
-  color: black !important;
-  min-height: 44px !important;
-  border-radius: 8px !important;
-  --border-radius:8px !important;
-  -–padding-start: 10px !important;
-
-}
-
-ion-radio{
-  padding-inline-start: 10px !important;
-
-}
-ion-item {
-  cursor: default;
-  --background-hover: transparent !important;
-}
 
 
