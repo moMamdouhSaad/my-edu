@@ -1,5 +1,7 @@
 <section class="subscription-form-container">
 
+
+
   <!-- Header -->
   <div class="flex-column" style="margin-bottom:10px">
     <!-- TODO -->
@@ -54,14 +56,71 @@
       </ion-item>
 
       <ion-item>
-        <div class="flex-column w-100">
 
-        <ion-label class="text-14 font-weight-500">Child’s Date of Birth</ion-label>
-        <ion-input formControlName="childAge" type="text" fill="outline" placeholder="Enter text"></ion-input>
-</div>
+          <div formGroupName="childAge" class="flex-row w-100">
+
+
+            <!-- Date Select -->
+            <div class="flex-1">
+              <ion-label class="text-14 font-weight-500">Date</ion-label>
+              <ion-select
+                formControlName="date"
+                placeholder="Day"
+                interface="popover"
+                fill="outline"
+              >
+                <ion-select-option
+                  *ngFor="let date of dates"
+                  [value]="date"
+                >
+                  {{date}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+
+            <!-- Month Select -->
+            <div class="flex-1">
+              <ion-label class="text-14 font-weight-500">Month</ion-label>
+              <ion-select
+                formControlName="month"
+                placeholder="Month"
+                interface="popover"
+                fill="outline"
+              >
+                <ion-select-option
+                  *ngFor="let month of months"
+                  [value]="month.value"
+                >
+                  {{month.name}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+
+            <!-- Year Select -->
+            <div class="flex-1">
+              <ion-label class="text-14 font-weight-500">Year</ion-label>
+              <ion-select
+                formControlName="year"
+                placeholder="Year"
+                interface="popover"
+                fill="outline"
+              >
+                <ion-select-option
+                  *ngFor="let year of years"
+                  [value]="year"
+                >
+                  {{year}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+
       </ion-item>
 
       <ion-item>
+
+
         <div class="flex-column w-100">
 
         <ion-label class="text-14 font-weight-500">Grade</ion-label>
@@ -83,4 +142,7 @@
 
     </div>
   </form>
+
+
+
 </section>
