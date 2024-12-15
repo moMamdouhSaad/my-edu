@@ -57,9 +57,6 @@ To run the project locally, follow these steps:
    git clone https://github.com/moMamdouhSaad/my-edu/git
    npm install
    ionic serve
-
-
-
 Feel free to contribute to this project or provide suggestions for improvements. Thank you for reviewing the work!
 
 
