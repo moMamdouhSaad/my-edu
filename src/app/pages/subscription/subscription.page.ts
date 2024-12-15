@@ -3,7 +3,7 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonRow, IonGrid, IonCol } 
 import { SubscriptionFormComponent } from './subscriptionForm/subscriptionForm.component';
 import { BillSummaryComponent } from './billSummary/billSummary.component';
 import { ResponsiveService } from 'src/app/core/services/responsive.service';
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.co
   templateUrl: 'subscription.page.html',
   styleUrls: ['subscription.page.scss'],
   standalone: true,
-  imports: [IonContent,IonGrid,IonRow,IonCol,SubscriptionFormComponent,BillSummaryComponent,NgIf],
+  imports: [IonContent,IonGrid,IonRow,IonCol,SubscriptionFormComponent,BillSummaryComponent,NgClass],
 })
 export class SubscriptionPage extends ResponsiveBaseComponent {
   constructor(public override responsiveService: ResponsiveService) {

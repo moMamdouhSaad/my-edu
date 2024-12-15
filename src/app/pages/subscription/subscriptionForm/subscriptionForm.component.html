@@ -1,219 +1,177 @@
-<section class="subscription-form-container">
-
-
-
-
-
-
-
+<section class="subscription-form-container" [ngClass]="{
+  'padding-24': isMobile || isTablet,
+  'padding-32': isDesktop || isLargeScreen,
+}">
 
   <!-- Header -->
-  <div class="flex-column" style="margin-bottom:10px">
-    <!-- TODO -->
-
+  <div class="flex-column margin-bottom-10">
     <span class="text-24 font-weight-700">Subscription Details</span>
-    <span class="text-16 font-weight-14" style="margin-bottom: 10px;">to our Monthly Surprise Box</span>
-<!-- TODO -->
-    <!-- sperator -->
-    <svg width="548" height="1" viewBox="0 0 548 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="548" height="1" fill="#F2F2F2" />
-    </svg>
-    <!--  -->
+    <span class="text-16 font-weight-14 margin-bottom-10 border-bottom padding-bottom-10">to our Monthly Surprise
+      Box</span>
 
   </div>
-
   <!--  -->
 
-
-  <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="subscriptionForm">
     <ion-list lines="none" class="ion-no-padding">
+
       <!-- Contact Information -->
+      <div class="margin-bottom-20">
+        <span class="text-20 font-weight-700">Contact Information</span>
 
+        <ion-item>
+          <div class="flex-column w-100 margin-bottom-10">
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Your name</ion-label>
+            <ion-input formControlName="fullName" fill="outline" placeholder="Mohamed Mamdouh"></ion-input>
+          </div>
+        </ion-item>
 
+        <ion-item>
+          <div class="flex-column w-100 margin-bottom-10">
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Email</ion-label>
+            <ion-input formControlName="email" type="email" fill="outline"
+              placeholder="mo.mamdouh.saad@gmail.com"></ion-input>
+          </div>
+        </ion-item>
+      </div>
       <!--  -->
-      <span class="text-20 font-weight-700">Contact Information</span>
-      <!--  -->
-
-
-      <ion-item >
-        <div class="flex-column w-100">
-          <ion-label class="text-14 font-weight-500">Your name</ion-label>
-          <ion-input formControlName="fullName" fill="outline" placeholder="Enter text"></ion-input>
-        </div>
-      </ion-item>
-
-
-      <ion-item>
-        <div class="flex-column w-100">
-        <ion-label class="text-14 font-weight-500">Email</ion-label>
-        <ion-input formControlName="email" type="email" fill="outline" placeholder="Enter text"></ion-input>
-        </div>
-      </ion-item>
 
       <!-- Child Information -->
-      <span class="text-20 font-weight-700">Child’s Information</span>
+      <div class="margin-bottom-20">
+        <span class="text-20 font-weight-700">Child’s Information</span>
 
-      <ion-item>
-        <div class="flex-column w-100">
-          <ion-label class="text-14 font-weight-500">Child’s Full Name</ion-label>
-          <ion-input formControlName="childName" type="text" fill="outline" placeholder="Enter text"></ion-input>
-        </div>
-      </ion-item>
+        <ion-item>
+          <div class="flex-column w-100 margin-bottom-10">
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Child’s Full Name</ion-label>
+            <ion-input formControlName="childName" type="text" fill="outline"
+              placeholder="Ahmed mohamed saad"></ion-input>
+          </div>
+        </ion-item>
 
-      <ion-item>
+        <ion-item>
+          <div class="flex-column w-100 margin-bottom-10">
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Child’s Date of Birth</ion-label>
+            <div formGroupName="childAge" class="flex-row w-100">
 
-        <div class="flex-column w-100">
-          <ion-label class="text-14 font-weight-500">Child’s Date of Birth</ion-label>
-          <div formGroupName="childAge" class="flex-row w-100">
+              <ion-row class="w-100 child-age-grid">
 
+                <!-- day Select -->
+                <ion-col>
+                  <div class="flex-1">
+                    <ion-select formControlName="day" placeholder="Day" interface="popover" fill="outline"
+                      label-placement="stacked">
 
-            <ion-row class="w-100 child-age-grid" >
+                      <ion-select-option *ngFor="let day of days" [value]="day">
+                        {{day}}
+                      </ion-select-option>
+                    </ion-select>
+                  </div>
+                  <!--  -->
 
-              <!-- Date Select -->
-              <ion-col  >
-                <div class="flex-1">
-                  <ion-label class="text-14 font-weight-500">Date</ion-label>
-                  <ion-select formControlName="date" placeholder="Day" interface="popover" fill="outline">
-                    <ion-select-option *ngFor="let date of dates" [value]="date">
-                      {{date}}
-                    </ion-select-option>
-                  </ion-select>
-                </div>
+                </ion-col>
+
+                <!-- Month Select -->
+                <ion-col>
+                  <div class="flex-1">
+                    <ion-select formControlName="month" placeholder="Month" interface="popover" fill="outline"
+                      label-placement="stacked">
+                      <ion-select-option *ngFor="let month of months" [value]="month.value">
+                        {{month.name}}
+                      </ion-select-option>
+                    </ion-select>
+                  </div>
+                </ion-col>
                 <!--  -->
 
-              </ion-col>
+                <ion-col>
+                  <!-- Year Select -->
+                  <div class="flex-1">
+                    <ion-select formControlName="year" placeholder="Year" interface="popover" fill="outline"
+                      label-placement="stacked">
+                      <ion-select-option *ngFor="let year of years" [value]="year">
+                        {{year}}
+                      </ion-select-option>
+                    </ion-select>
+                  </div>
+                </ion-col>
+                <!--  -->
+              </ion-row>
 
-              <!-- Month Select -->
+            </div>
+          </div>
 
+        </ion-item>
 
-              <ion-col  >
-                <div class="flex-1">
-                  <ion-label class="text-14 font-weight-500">Month</ion-label>
-                  <ion-select formControlName="month" placeholder="Month" interface="popover" fill="outline">
-                    <ion-select-option *ngFor="let month of months" [value]="month.value">
-                      {{month.name}}
-                    </ion-select-option>
-                  </ion-select>
-                </div>
-              </ion-col>
-              <!--  -->
+        <ion-item rippleEffect="false">
 
-              <ion-col >
-                <!-- Year Select -->
-                <div class="flex-1">
-                  <ion-label class="text-14 font-weight-500">Year</ion-label>
-                  <ion-select formControlName="year" placeholder="Year" interface="popover" fill="outline">
-                    <ion-select-option *ngFor="let year of years" [value]="year">
-                      {{year}}
-                    </ion-select-option>
-                  </ion-select>
-                </div>
-              </ion-col>
-              <!--  -->
+          <div class="flex-column w-100 margin-bottom-10">
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Grade</ion-label>
+            <ion-select formControlName="childGrade" placeholder="Grade" interface="popover" fill="outline"
+              label-placement="stacked" class="no-ripple">
+              <ion-select-option>
+                {{'Grade 1'}}
+              </ion-select-option>
 
+              <ion-select-option>
+                {{'Grade 2'}}
+              </ion-select-option>
 
-            </ion-row>
+              <ion-select-option>
+                {{'Grade 3'}}
+              </ion-select-option>
 
-
-
-
-
-
-
+              <ion-select-option>
+                {{'Grade 4'}}
+              </ion-select-option>
+            </ion-select>
 
           </div>
-        </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="flex-column w-100 margin-bottom-10">
+
+            <ion-label class="text-14 font-weight-500 margin-bottom-5">Grade</ion-label>
+
+            <ion-radio-group value="boy" class="radio-group grade-grid">
+              <ion-radio value="start" labelPlacement="start" alignment="center" class="custom-radio"
+                slot="start">Boy</ion-radio>
+              <ion-radio value="girl" labelPlacement="start" alignment="center" class="custom-radio"
+                slot="start">Girl</ion-radio>
+            </ion-radio-group>
+          </div>
 
 
+        </ion-item>
 
-      </ion-item>
-
-      <ion-item>
-
-
-        <div class="flex-column w-100">
-
-        <ion-label class="text-14 font-weight-500">Grade</ion-label>
-
-        <ion-select formControlName="childGrade" placeholder="Grade" interface="popover" fill="outline">
-
-          <ion-select-option>
-            {{'1'}}
-          </ion-select-option>
-
-          <ion-select-option>
-            {{'2'}}
-          </ion-select-option>
-
-
-        </ion-select>
-
-
-</div>
-      </ion-item>
-
-
-      <ion-item>
-        <div class="flex-column w-100">
-
-          <ion-label class="text-14 font-weight-500">Gender</ion-label>
-
-        <ion-radio-group value="start" class="radio-group grade-grid">
-          <ion-radio value="start" labelPlacement="start" alignment="center" class="custom-radio" slot="start">paapy</ion-radio>
-          <ion-radio value="start2" labelPlacement="start" alignment="center" class="custom-radio" slot="start">saad</ion-radio>
-      </ion-radio-group>
       </div>
+      <!--  -->
+      <ion-item>
 
+        <div class="flex-column w-100 margin-bottom-10">
 
-      </ion-item>
-
-      <ion-item >
-
-        <div class="flex-column w-100">
-
-          <span class="text-20 font-weight-700">As a parent select any 3 topics</span>
-
-
+          <span class="text-20 font-weight-700 margin-bottom-5">As a parent select any 3 topics</span>
           <div class="checkbox-group">
-            <ng-container  *ngFor="let topic of ['Arabic', 'Islamic', 'History', 'Sports', 'English']" >
-
-              <ion-checkbox
-                  labelPlacement="start" alignment="center" class="custom-checkbox" slot="start"
-
-                    [value]="topic"
-                    (ionChange)="onCheckboxChange($event)"
-                    [checked]="subscriptionForm.get('topics')?.value.includes(topic)"
-                  >
+            <ng-container *ngFor="let topic of ['Arabic', 'Islamic', 'History', 'Sports', 'English']">
+              <ion-checkbox labelPlacement="start" alignment="center" class="custom-checkbox" slot="start"
+                [value]="topic" (ionChange)="onCheckboxChange($event)"
+                [checked]="subscriptionForm.get('topics')?.value.includes(topic)">
                 {{topic}}
-                </ion-checkbox>
-                  </ng-container>
-            </div>
-
-
-</div>
-
-
-
+              </ion-checkbox>
+            </ng-container>
+          </div>
+        </div>
       </ion-item>
-
-
-
     </ion-list>
 
-    <div class="ion-padding w-100">
+    <div class="ion-no-padding w-100" *ngIf="!isMobile">
 
-      <app-rounded-button
-      [size]="'default'" [additionalClass]="'font-bold-900'"
-      [fontWeight]="900"
-      [expand]="'full'"
-      style="--custom-border-radius: 16px;
-               ">
-       Continue to Payment
-     </app-rounded-button>
+      <app-rounded-button (click)="onSubmit()" [size]="'default'" [additionalClass]="'font-bold-900'" [fontWeight]="900"
+        [expand]="'block'" [disabled]="subscriptionForm.invalid" style="--custom-border-radius: 16px;">
+        Continue to Payment
+      </app-rounded-button>
 
     </div>
   </form>
-
-
 
 </section>

@@ -1,21 +1,23 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonList, IonItem, IonLabel, IonButton, IonInput,IonSelect,IonSelectOption, IonRow, IonCol, IonRadioGroup, IonRadio, IonCheckbox } from "@ionic/angular/standalone";
+import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IonList, IonItem, IonLabel, IonInput,IonSelect,IonSelectOption, IonRow, IonCol, IonRadioGroup, IonRadio, IonCheckbox, IonIcon } from "@ionic/angular/standalone";
+import { ResponsiveService } from 'src/app/core/services/responsive.service';
+import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.component';
 import { ButtonComponent } from 'src/app/shared/components/button/button/rounded-button.component';
 
 @Component({
   selector: 'app-subscription-form',
   standalone: true,
-  imports: [IonCheckbox, IonRadio, IonRadioGroup, IonCol, IonRow, IonInput, IonButton, IonLabel, IonItem, IonList,ReactiveFormsModule,ButtonComponent,IonSelect,IonSelectOption,NgFor ],
+  imports: [IonCheckbox, IonRadio, IonRadioGroup, IonCol, IonRow, IonInput, IonLabel, IonItem, IonList,ReactiveFormsModule,FormsModule,ButtonComponent,IonSelect,IonSelectOption,NgFor,NgIf,NgClass ],
   templateUrl: './subscriptionForm.component.html',
   styleUrl: './subscriptionForm.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class SubscriptionFormComponent {
+export class SubscriptionFormComponent extends ResponsiveBaseComponent {
 
   subscriptionForm: FormGroup;
-  dates: number[] = Array.from({length: 31}, (_, i) => i + 1);
+  days: number[] = Array.from({length: 31}, (_, i) => i + 1);
   months: {value: number, name: string}[] = [
     {value: 1, name: 'January'},
     {value: 2, name: 'February'},
@@ -30,16 +32,16 @@ export class SubscriptionFormComponent {
     {value: 11, name: 'November'},
     {value: 12, name: 'December'}
   ];
-
   years: number[] = this.generateYearRange();
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,public override responsiveService:ResponsiveService) {
+    super(responsiveService)
     this.subscriptionForm = this.fb.group({
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       childName: ['', [Validators.required]],
       childAge: this.fb.group({
-        date: ['', Validators.required],
+        day: ['', Validators.required],
         month: ['', Validators.required],
         year: ['', Validators.required]
       }),
@@ -50,17 +52,16 @@ export class SubscriptionFormComponent {
   }
 
   onSubmit() {
+    console.log(this.subscriptionForm.value)
     if (this.subscriptionForm.valid) {
       console.log(this.subscriptionForm.value);
       // Handle form submission logic
     }
   }
   private generateYearRange(): number[] {
-    const currentYear = new Date().getFullYear();
-    return Array.from(
-      {length: 50},
-      (_, i) => currentYear - i
-    );
+    const startYear = 2010; // Start year is 2010
+    const length = 10; // Generate 10 years
+    return Array.from({ length }, (_, i) => startYear + i);
   }
 
   validateBirthDate() {

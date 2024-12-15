@@ -1,44 +1,33 @@
+<!-- TODO : make a bill as a resuable component -->
 <section class="bill-summary-container">
-
   <div class="flex-column" style="margin-bottom:10px">
-
-  <span class="text-24 font-weight-700">Summary</span>
-  <span class="text-16 font-weight-14" style="margin-bottom: 10px;">of your Monthly Surprise Box</span>
-</div>
+    <span class="text-24 font-weight-700">Summary</span>
+    <span class="text-16 font-weight-14" style="margin-bottom: 10px;">of your Monthly Surprise Box</span>
+  </div>
 
   <ion-list lines="none" class="ion-no-padding">
+    <ion-item class="items-container w-100 ion-justify-content-between">
+      <ion-row class="w-100 ion-justify-content-between">
 
-
-
-    <ion-item  class="items-container w-100 ion-justify-content-between" style="display: flex !important;">
-
-      <ion-row class="w-100" style="display: flex;justify-content: space-between;">
-
-        <div >
+        <div>
           <ion-label class="text-16 font-weight-700">Mystery Box </ion-label>
           <ion-note>x1</ion-note>
         </div>
-   <!-- TODO -->
-   <div>
 
-    <ion-label>
-      <span class="text-16 font-weight-400">SAR </span>
-      <span class="text-16 font-weight-700">456</span>
-    </ion-label>
-    <ion-note>Monthly</ion-note>
-  </div>
-
+        <div>
+          <ion-label>
+            <span class="text-16 font-weight-400">SAR </span>
+            <span class="text-16 font-weight-700">456</span>
+          </ion-label>
+          <ion-note>Monthly</ion-note>
+        </div>
 
       </ion-row>
-
-
-
-
-
     </ion-item>
 
     <ion-item>
       <ion-label class="text-14 font-weight-400">Subtotal</ion-label>
+
       <div>
         <span class="text-16 font-weight-400">SAR </span>
         <span class="text-16 font-weight-700">456</span>
@@ -53,6 +42,7 @@
 
     <ion-item>
       <ion-label class="text-14 font-weight-400">Taxes</ion-label>
+
       <div>
         <span class="text-16 font-weight-400">SAR </span>
         <span class="text-16 font-weight-700">4.0</span>
@@ -63,7 +53,7 @@
     <ion-item class="ion-align-items-start">
 
       <ion-label class="text-17 font-weight-600">Total</ion-label>
-      <div class="flex-column ">
+      <div class="flex-column">
         <div>
           <span class="text-16 font-weight-400">SAR </span>
           <span class="text-16 font-weight-700">4.0</span>
@@ -74,5 +64,11 @@
 
 
   </ion-list>
+  <div class="ion-no-padding w-100" *ngIf="isMobile">
+    <app-rounded-button [size]="'default'" [additionalClass]="'font-bold-900'" [fontWeight]="900" [expand]="'block'"
+      style="--custom-border-radius: 16px">
+      Continue to Payment
+    </app-rounded-button>
 
+  </div>
 </section>

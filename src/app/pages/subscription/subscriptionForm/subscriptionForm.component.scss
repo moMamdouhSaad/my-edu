@@ -1,5 +1,4 @@
 :host {
-  padding:32px; //TODO
 
   display: block;
   background-color: var(--ion-color-primary-contrast);
@@ -26,4 +25,7 @@ ion-item{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 16px; /* Adjust the gap size as needed */
+}
+.border-bottom{
+  border-bottom: 1px var(--border-gray-1) solid;
 }

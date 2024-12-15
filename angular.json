@@ -33,9 +33,9 @@
             ],
             "styles": ["src/global.scss"],
             "stylePreprocessorOptions": {
-        "includePaths": [
-          "src/theme"
-        ]
+            "includePaths": [
+          "src/styles"
+             ]
       },
             "scripts": []
           },
@@ -113,9 +113,7 @@
             ],
             "styles": ["src/global.scss"],
             "stylePreprocessorOptions": {
-        "includePaths": [
-          "src/theme"
-        ]
+                 "includePaths": ["src/styles"]
       },
             "scripts": []
           },

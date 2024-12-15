@@ -17,7 +17,9 @@ export class ButtonComponent {
   @Input() additionalClass: string = ''; // Additional classes for customization
   @Input() borderRadius: string = '5px'; // Default border radius
   @Input() fontWeight:number = 500;
-  @Input() expand:'full'|'block'|''=''
+  @Input() expand:'full'|'block'|''='';
+  @Input() disabled:boolean=false
+
   fill: string = 'outline';   // Default fill
   shape: string = 'round'; // Default shape
 

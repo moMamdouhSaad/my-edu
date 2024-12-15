@@ -1,5 +1,5 @@
 // src/app/shared/core/responsive-base.component.ts
-import { OnInit, OnDestroy, Component } from '@angular/core';
+import { OnInit, OnDestroy, Component, ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DeviceType } from '../enum/device-type.enum';
 import { ResponsiveService } from 'src/app/core/services/responsive.service';
@@ -32,10 +32,15 @@ export abstract class ResponsiveBaseComponent implements OnInit, OnDestroy {
   }
 
 
-  // Boolean properties to represent device types
+
+  public set isMobile(v : DeviceType) {
+    this.deviceType = v;
+  }
+
   get isMobile(): boolean {
     return this.deviceType === DeviceType.Mobile;
   }
+
 
   get isTablet(): boolean {
     return this.deviceType === DeviceType.Tablet;

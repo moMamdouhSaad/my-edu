@@ -1,20 +1,16 @@
 
 :host {
   display: block;
-
+    // padding: 10px;
+// background-color: green;
   ion-button {
     text-transform: none !important;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out;
+
+    // transition: transform 0.2s ease-in-out;
     // border: 1px solid #896AF9;
 
-    &:hover {
-      transform: scale(1.05);
-    }
 
-    &:active {
-      transform: scale(0.95);
-    }
   }
 }
 
@@ -22,6 +18,10 @@
   background-color: var(--ion-color-primary-contrast) !important;
   border-radius: var(--custom-border-radius, 5px); //default
   box-shadow: 4px 4px 0px -1px var(--ion-color-primary);
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-start: 14px;
+  padding-block-end:14px !important;
 
 
 }

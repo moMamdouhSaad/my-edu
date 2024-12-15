@@ -67,6 +67,7 @@ ion-item {
 
 .custom-radio[aria-checked="true"]::after {
   content:url('/assets/icons/checked-icon.svg'); /* Path to your custom checked icon */
+
 }
 
 .custom-radio{
@@ -74,20 +75,14 @@ ion-item {
 
   display: flex;
   align-items: center;
-  --color-checked: green !important;
-  --color: green !important; /* Change the color of the default unselected circle */
   min-height: 44px !important;
   border-radius: 8px !important;
   padding-inline-start: 16px !important;
-  // padding-inline-end: 10px !important;
-
 }
 
 .radio-group{
   display: flex;
-
 }
-
 
 /* Hide the default checkbox icon */
 .custom-checkbox::part(container) {
@@ -184,3 +179,16 @@ ion-item {
   gap: 12px; /* Add spacing between checkboxes */
   flex-wrap: wrap;
 }
+
+// Select
+
+ion-select::part(icon) {
+  content: url('/assets/icons/dropdown-select.svg');
+
+}
+
+ion-select[aria-expanded="true"]::part(icon) {
+  transform: rotate(180deg); /* Flip the icon */
+}
+
+

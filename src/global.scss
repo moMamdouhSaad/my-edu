@@ -39,10 +39,14 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import '@ionic/angular/css/palettes/dark.system.css';
-@import '/src/app/theme/theme.scss';
-@import '/src/app/theme/typography.scss';
-@import '/src/app/theme/colors.scss';
-@import '/src/app/theme/general.scss';
+@import '/src/app/styles/theme.scss';
+@import '/src/app/styles/typography.scss';
+@import '/src/app/styles/colors.scss';
+@import '/src/app/styles/general.scss';
+@import '/src/app/styles/margin-padding.scss';
+@import '/src/app/styles/functions.scss';
+
+
 
 
 
@@ -77,10 +81,14 @@ ion-input, ion-select {
   min-height: 44px !important;
   border-radius: 8px !important;
   --border-radius:8px !important;
+  -–padding-start: 10px !important;
 
 }
 
+ion-radio{
+  padding-inline-start: 10px !important;
 
+}
 ion-item {
   cursor: default;
   --background-hover: transparent !important;

@@ -15,7 +15,6 @@ import { ResponsiveBaseComponent } from 'src/app/shared/bases/responsive-base.co
 })
 export class HeroSectionComponent extends ResponsiveBaseComponent {
   constructor(public override readonly responsiveService:ResponsiveService){
-    super(responsiveService); // Inherit from ResponsiveBaseComponent
-
+    super(responsiveService);
   }
  }

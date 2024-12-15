@@ -1,5 +1,10 @@
-<ion-header class="ion-no-border" >
-  <ion-toolbar color="primary" class="main-padding-horizontal">
+<ion-header >
+  <ion-toolbar color="primary" class="main-padding-horizontal"  class="ion-no-border" [ngClass]="{
+    'padding-top-20 padding-horizontal-30': isMobile,
+    'padding-top-50 padding-horizontal-90 ': isTablet,
+    'padding-top-60 padding-horizontal-150': isDesktop,
+    'padding-top-90 padding-horizontal-230 ': isLargeScreen
+  }">
     <ion-title style="padding:0 !important">{{ 'Logo' }}</ion-title>
   </ion-toolbar>
 </ion-header>
