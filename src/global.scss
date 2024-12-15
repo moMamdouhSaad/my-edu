@@ -75,7 +75,30 @@ body {
 ion-input, ion-select {
   color: black !important;
   min-height: 44px !important;
-  border-radius: 8px;
+  border-radius: 8px !important;
+  --border-radius:8px !important;
+  // padding:50px 19px;
+
+  // -webkit-padding-start: 50px;
+  //   padding-inline-start: 50px;
+  //   -webkit-padding-end:50px;
+  //   padding-inline-end: 50px;
+  //   padding-top:50px;
+  //   padding-bottom: 50px;
+  //   border-radius: 50px;
+    .input-wrapper{
+
+    }
+
+    // -webkit-padding-start: var(--padding-start);
+    // padding-inline-start: var(--padding-start);
+    // -webkit-padding-end: var(--padding-end);
+    // padding-inline-end: var(--padding-end);
+    // padding-top: var(--padding-top);
+    // padding-bottom: var(--padding-bottom);
+    // border-radius: var(--border-radius);
+
+
 
 }
 

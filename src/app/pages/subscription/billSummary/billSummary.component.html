@@ -1,32 +1,78 @@
 <section class="bill-summary-container">
-  <span class="summary-title">Order Summary</span>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Subscription Plan</ion-label>
-      <ion-note slot="end">Monthly Box</ion-note>
+  <div class="flex-column" style="margin-bottom:10px">
+
+  <span class="text-24 font-weight-700">Summary</span>
+  <span class="text-16 font-weight-14" style="margin-bottom: 10px;">of your Monthly Surprise Box</span>
+</div>
+
+  <ion-list lines="none" class="ion-no-padding">
+
+
+
+    <ion-item  class="items-container w-100 ion-justify-content-between" style="display: flex !important;">
+
+      <ion-row class="w-100" style="display: flex;justify-content: space-between;">
+
+        <div >
+          <ion-label class="text-16 font-weight-700">Mystery Box </ion-label>
+          <ion-note>x1</ion-note>
+        </div>
+   <!-- TODO -->
+   <div>
+
+    <ion-label>
+      <span class="text-16 font-weight-400">SAR </span>
+      <span class="text-16 font-weight-700">456</span>
+    </ion-label>
+    <ion-note>Monthly</ion-note>
+  </div>
+
+
+      </ion-row>
+
+
+
+
+
     </ion-item>
 
     <ion-item>
-      <ion-label>Base Price</ion-label>
-      <ion-note slot="end">$29.99</ion-note>
+      <ion-label class="text-14 font-weight-400">Subtotal</ion-label>
+      <div>
+        <span class="text-16 font-weight-400">SAR </span>
+        <span class="text-16 font-weight-700">456</span>
+      </div>
+
     </ion-item>
 
     <ion-item>
-      <ion-label>Shipping</ion-label>
+      <ion-label class="text-14 font-weight-400">Shipping</ion-label>
       <ion-note slot="end">Free</ion-note>
     </ion-item>
 
     <ion-item>
-      <ion-label class="total-label">Total</ion-label>
-      <ion-note slot="end" class="total-price">$29.99</ion-note>
+      <ion-label class="text-14 font-weight-400">Taxes</ion-label>
+      <div>
+        <span class="text-16 font-weight-400">SAR </span>
+        <span class="text-16 font-weight-700">4.0</span>
+      </div>
+
     </ion-item>
+
+    <ion-item class="ion-align-items-start">
+
+      <ion-label class="text-17 font-weight-600">Total</ion-label>
+      <div class="flex-column ">
+        <div>
+          <span class="text-16 font-weight-400">SAR </span>
+          <span class="text-16 font-weight-700">4.0</span>
+        </div>
+        <ion-note slot="end">Monthly</ion-note>
+      </div>
+    </ion-item>
+
+
   </ion-list>
 
-  <div class="summary-description ion-padding">
-    <p>
-      Your monthly surprise box will be shipped within 3-5 business days
-      after order confirmation.
-    </p>
-  </div>
 </section>

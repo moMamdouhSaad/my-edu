@@ -14,3 +14,16 @@ ion-item{
   margin-bottom: 10px !important;
 }
 }
+
+
+.child-age-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 16px; /* Adjust the gap size as needed */
+}
+
+.grade-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 16px; /* Adjust the gap size as needed */
+}

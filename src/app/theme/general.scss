@@ -49,3 +49,140 @@ ion-item {
   --padding-end: 0px;
   padding: 0;
 }
+
+
+
+.custom-radio::part(container) {
+  display: none; /* Removes the default radio button circle */
+}
+
+/* Add custom icon for the unchecked state */
+.custom-radio::after {
+  content: url('/assets/icons/unchecked-icon.svg'); /* Path to your custom unchecked icon */
+  display: inline-block;
+  width: 24px; /* Adjust size */
+  height: 24px;
+  margin-top: 5px;
+}
+
+.custom-radio[aria-checked="true"]::after {
+  content:url('/assets/icons/checked-icon.svg'); /* Path to your custom checked icon */
+  --color-checked: green !important;
+
+}
+
+.custom-radio{
+  border: 1px var(--ion-color-step-300, var(--ion-background-color-step-300, #b3b3b3))  solid;
+
+  display: flex;
+  align-items: center;
+  --color-checked: green !important;
+  --color: green !important; /* Change the color of the default unselected circle */
+  min-height: 44px !important;
+  border-radius: 8px !important;
+  padding-inline-start: 16px !important;
+  // padding-inline-end: 10px !important;
+
+}
+
+.radio-group{
+  display: flex;
+
+}
+
+
+/* Hide the default checkbox icon */
+.custom-checkbox::part(container) {
+  display: none;
+}
+
+/* Add custom appearance for the unchecked state */
+.custom-checkbox::after {
+  content: ''; /* No icon displayed */
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-color: #f0f0f0; /* Light background for unchecked state */
+  border-radius: 50%; /* Rounded appearance */
+  margin-top: 5px;
+  transition: all 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Change appearance when checked */
+.custom-checkbox[aria-checked="true"]::after {
+  background-color: #896AF9; /* Background color when checked */
+  border: 2px solid #896AF9; /* Border color when checked */
+  color: white; /* Text color inside the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  content: '✔'; /* You can replace this with a custom icon */
+}
+
+/* Checkbox container style */
+.custom-checkbox {
+  border: 1px solid #E1E3E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Rounded appearance */
+  max-height: 32px !important;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for border changes */
+  font-weight: 400;
+  color:#667085
+}
+
+/* When the checkbox is checked, color the entire border */
+.custom-checkbox[aria-checked="true"] {
+  border-color: #896AF9; /* Border color when checked */
+}
+
+/* Group styling for spacing */
+.checkbox-group {
+  display: flex;
+  gap: 12px; /* Add spacing between checkboxes */
+  flex-wrap: wrap;
+}/* Hide the default checkbox icon */
+.custom-checkbox::part(container) {
+  display: none;
+}
+
+/* Add custom appearance for the unchecked state */
+.custom-checkbox::after {
+  display: none;
+}
+
+/* Change appearance when checked */
+.custom-checkbox[aria-checked="true"]::after {
+ display: none;
+}
+
+/* Checkbox container style */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 48px; /* Rounded appearance */
+  max-height: 32px !important;
+  cursor: pointer;
+  padding-inline-start: 16px;
+  padding-block: 4px;
+  transition: all 0.3s ease; /* Smooth transition for border changes */
+
+}
+
+/* When the checkbox is checked, color the entire border */
+.custom-checkbox[aria-checked="true"] {
+  border-color: #896AF9; /* Border color when checked */
+  background-color: #F4F1FE;
+  color:#6633FF !important
+}
+
+/* Group styling for spacing */
+.checkbox-group {
+  display: flex;
+  gap: 12px; /* Add spacing between checkboxes */
+  flex-wrap: wrap;
+}

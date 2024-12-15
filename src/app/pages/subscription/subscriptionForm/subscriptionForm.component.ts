@@ -1,13 +1,13 @@
 import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonList, IonItem, IonLabel, IonButton, IonInput,IonSelect,IonSelectOption } from "@ionic/angular/standalone";
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IonList, IonItem, IonLabel, IonButton, IonInput,IonSelect,IonSelectOption, IonRow, IonCol, IonRadioGroup, IonRadio, IonCheckbox } from "@ionic/angular/standalone";
 import { ButtonComponent } from 'src/app/shared/components/button/button/rounded-button.component';
 
 @Component({
   selector: 'app-subscription-form',
   standalone: true,
-  imports: [IonInput, IonButton, IonLabel, IonItem, IonList,ReactiveFormsModule,ButtonComponent,IonSelect,IonSelectOption,NgFor ],
+  imports: [IonCheckbox, IonRadio, IonRadioGroup, IonCol, IonRow, IonInput, IonButton, IonLabel, IonItem, IonList,ReactiveFormsModule,ButtonComponent,IonSelect,IonSelectOption,NgFor ],
   templateUrl: './subscriptionForm.component.html',
   styleUrl: './subscriptionForm.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -43,7 +43,8 @@ export class SubscriptionFormComponent {
         month: ['', Validators.required],
         year: ['', Validators.required]
       }),
-      childGrade: ['', [Validators.required]]
+      childGrade: ['', [Validators.required]],
+      topics: this.fb.array([])
 
     });
   }
@@ -81,4 +82,18 @@ export class SubscriptionFormComponent {
       }
     }
   }
+
+   // Add a checkbox to the FormArray
+   onCheckboxChange(event: any) {
+    const topics: FormArray = this.subscriptionForm.get('topics') as FormArray;
+
+    if (event.target.checked) {
+      topics.push(this.fb.control(event.target.value));
+    } else {
+      const index = topics.controls.findIndex(x => x.value === event.target.value);
+      topics.removeAt(index);
+    }
+  }
+
+
  }
